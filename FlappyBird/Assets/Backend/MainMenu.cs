@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     public void StartPlaying()
     {
         SoundManager.PlaySound(SoundManager.Sound.Start);
-        SceneManager.LoadScene(1);
+        Loader.Load(Loader.Scene.MainScene);
     }
 
     private void Start()

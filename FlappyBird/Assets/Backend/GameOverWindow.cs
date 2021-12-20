@@ -31,7 +31,7 @@ public class GameOverWindow : MonoBehaviour
     public void Replay()
     {
         SoundManager.PlaySound(SoundManager.Sound.Start);
-        SceneManager.LoadScene(1);
+        Loader.Load(Loader.Scene.MainScene);
         SaveData.isHighscore = false;
     }
 
