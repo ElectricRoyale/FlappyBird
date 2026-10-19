@@ -62,7 +62,7 @@ FlappyBird/
 ### Projekt öffnen
 
 ```bash
-git clone https://github.com/<dein-username>/FlappyBird.git
+git clone https://github.com/ElectricRoyale/FlappyBird.git
 ```
 
 1. Unity Hub öffnen → **Add** → Ordner `FlappyBird/` auswählen
