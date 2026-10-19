@@ -1,38 +1,38 @@
-# Flappy Bird – Unity 2D
+# 🐦 Flappy Bird – Unity 2D
 
-Ein Flappy-Bird-Klon für **Desktop und Android**, entwickelt mit **Unity 2020.3 (LTS)** und C#.
-Tippen, Röhren ausweichen, Highscore knacken.
+A Flappy Bird clone for **desktop and Android**, built with **Unity 2020.3 (LTS)** and C#.
+Tap, dodge the pipes, beat your highscore.
 
 ## Features
 
-- Klassisches One-Button-Gameplay (Mausklick / Tap)
-- Zufällig generierte Röhren mit Score-Erkennung per Raycast
-- Persistenter Highscore (lokale Speicherung)
-- Hauptmenü, Ladebildschirm, Game-Over-Fenster mit Scoreboard
-- Pause-Funktion mit Countdown vor dem Weiterspielen
-- Sound-Effekte und Hintergrundmusik (Flügelschlag, Punkt, Treffer, Tod)
-- Animierter Vogel und scrollender Boden
-- Vorkompilierter Android-Build (APK) im Repository
+- Classic one-button gameplay (mouse click / tap)
+- Randomly generated pipes with raycast-based score detection
+- Persistent highscore (local storage)
+- Main menu, loading screen, and game-over window with scoreboard
+- Pause function with a countdown before resuming
+- Sound effects and background music (flap, point, hit, death)
+- Animated bird and scrolling ground
+- Prebuilt Android APK included in the repository
 
 ## Tech Stack
 
-| Bereich       | Technologie                      |
-| ------------- | -------------------------------- |
-| Engine        | Unity 2020.3.25f1                |
-| Sprache       | C#                               |
-| Physik        | Unity Physics2D (`Rigidbody2D`)  |
-| UI            | Unity UI + TextMeshPro           |
-| Ziel-Plattform| Windows / macOS / Linux, Android (min. SDK 19) |
+| Area            | Technology                                      |
+| --------------- | ----------------------------------------------- |
+| Engine          | Unity 2020.3.25f1                               |
+| Language        | C#                                              |
+| Physics         | Unity Physics2D (`Rigidbody2D`)                 |
+| UI              | Unity UI + TextMeshPro                          |
+| Target platforms| Windows / macOS / Linux, Android (min. SDK 19)  |
 
-## Projektstruktur
+## Project Structure
 
 ```
 FlappyBird/
-├── APK/                  # Fertiger Android-Build
+├── APK/                  # Prebuilt Android build
 ├── Assets/
-│   ├── Animations/       # Vogel- und Boden-Animationen
-│   ├── Backend/          # Gesamte Spiellogik (C#)
-│   ├── FlappyBirdAsserts/# Sprites und Prefabs (Bird, Pipe, Ground)
+│   ├── Animations/       # Bird and ground animations
+│   ├── Backend/          # All game logic (C#)
+│   ├── FlappyBirdAsserts/# Sprites and prefabs (Bird, Pipe, Ground)
 │   ├── Fonts/
 │   ├── Scenes/           # MainMenu, LoadingScene, MainScene
 │   └── Sounds/
@@ -40,61 +40,61 @@ FlappyBird/
 └── ProjectSettings/
 ```
 
-### Wichtige Skripte (`Assets/Backend`)
+### Key Scripts (`Assets/Backend`)
 
-| Skript             | Aufgabe                                              |
-| ------------------ | ---------------------------------------------------- |
-| `Bird.cs`          | Spielerlogik, State-Machine, Sprung, Kollision, Score|
-| `PipeHandler.cs`   | Spawnen und Bewegen der Röhren, Pause/Resume         |
-| `SaveData.cs`      | Speichern und Laden des Highscores                   |
-| `ScoreBoard.cs`    | Anzeige von Score und Highscore                      |
-| `GameOverWindow.cs`| Game-Over-UI                                         |
-| `Loader.cs`        | Szenenwechsel über den Ladebildschirm                |
-| `SoundManager.cs`  | Zentrales Abspielen der Sound-Effekte                |
+| Script              | Responsibility                                        |
+| ------------------- | ----------------------------------------------------- |
+| `Bird.cs`           | Player logic, state machine, jump, collision, score   |
+| `PipeHandler.cs`    | Pipe spawning and movement, pause/resume              |
+| `SaveData.cs`       | Saving and loading the highscore                      |
+| `ScoreBoard.cs`     | Score and highscore display                           |
+| `GameOverWindow.cs` | Game-over UI                                          |
+| `Loader.cs`         | Scene transitions via the loading screen              |
+| `SoundManager.cs`   | Central sound effect playback                         |
 
-## Installation & Start
+## Getting Started
 
-### Voraussetzungen
+### Prerequisites
 
 - [Unity Hub](https://unity.com/download)
-- Unity Editor **2020.3.25f1** (andere 2020.3-Versionen funktionieren in der Regel ebenfalls)
+- Unity Editor **2020.3.25f1** (other 2020.3 versions should generally work as well)
 
-### Projekt öffnen
+### Open the Project
 
 ```bash
 git clone https://github.com/ElectricRoyale/FlappyBird.git
 ```
 
-1. Unity Hub öffnen → **Add** → Ordner `FlappyBird/` auswählen
-2. Mit Unity 2020.3.25f1 öffnen
-3. Szene `Assets/Scenes/MainMenu.unity` laden
-4. **Play** drücken
+1. Open Unity Hub → **Add** → select the `FlappyBird/` folder
+2. Open it with Unity 2020.3.25f1
+3. Load the scene `Assets/Scenes/MainMenu.unity`
+4. Press **Play**
 
-### Android-Build
+### Android Build
 
-Die fertige APK liegt unter `FlappyBird/APK/Flappy_Bird2.apk` und kann direkt auf ein Android-Gerät installiert werden (Installation aus unbekannten Quellen erlauben).
+The prebuilt APK is located at `FlappyBird/APK/Flappy_Bird2.apk` and can be installed directly on an Android device (allow installation from unknown sources).
 
-Eigener Build: **File → Build Settings → Android → Build**.
+To build it yourself: **File → Build Settings → Android → Build**.
 
-## Steuerung
+## Controls
 
-| Aktion              | Eingabe                |
-| ------------------- | ---------------------- |
-| Spiel starten / Sprung | Linksklick bzw. Tap |
+| Action               | Input                |
+| -------------------- | -------------------- |
+| Start game / Jump    | Left click or tap    |
 
-## Bekannte Einschränkungen / Roadmap
+## Known Limitations / Roadmap
 
-- [ ] Highscore-Speicherung von `BinaryFormatter` auf JSON umstellen (sicherer und wartbarer)
-- [ ] Schwierigkeitsstufen (Röhrenabstand, Geschwindigkeit)
-- [ ] Leeres `GameHandler.cs` entfernen oder sinnvoll nutzen
-- [ ] Einstellungsmenü (Lautstärke)
+- [ ] Replace `BinaryFormatter` with JSON for highscore persistence (safer and more maintainable)
+- [ ] Difficulty levels (pipe gap, speed)
+- [ ] Remove the empty `GameHandler.cs` or give it a purpose
+- [ ] Settings menu (volume)
 
-## Mitwirken
+## Contributing
 
-Pull Requests sind willkommen. Für größere Änderungen bitte zuerst ein Issue erstellen.
+Pull requests are welcome. For major changes, please open an issue first.
 
-## Lizenz
+## License
 
-Noch nicht festgelegt. Empfehlung: [MIT License](https://choosealicense.com/licenses/mit/) hinzufügen.
+Not yet specified. Recommendation: add the [MIT License](https://choosealicense.com/licenses/mit/).
 
-> Dieses Projekt ist ein Fan-Projekt und steht in keiner Verbindung zum Original-Flappy-Bird.
+> This is a fan project and is not affiliated with the original Flappy Bird.
